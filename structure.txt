@@ -1,0 +1,38 @@
+ai4i-embeddings-nn/
+├─ README.md
+├─ requirements.txt
+├─ .gitignore
+├─ configs/
+│  └─ default.yaml
+├─ data/
+│  ├─ raw/          # tu ląduje ai4i2020.csv (oryginał)
+│  ├─ interim/      # dane po wstępnym czyszczeniu
+│  └─ processed/    # finalne cechy do trenowania/ewaluacji
+├─ notebooks/
+│  ├─ 01_eda.ipynb
+│  ├─ 02_preprocess.ipynb
+│  └─ 03_nn_embeddings.ipynb
+├─ src/
+│  ├─ __init__.py
+│  ├─ utils/
+│  │  ├─ io.py              # ścieżki, zapisy/odczyty plików
+│  │  └─ seed.py            # ustawianie losowości
+│  ├─ data/
+│  │  ├─ download_ai4i.py   # (opcjonalnie) automatyczny download
+│  │  └─ dataset.py         # podział train/val/test, wczytanie csv
+│  ├─ features/
+│  │  └─ build_features.py  # LabelEncoder→indeksy, skale, brakujące
+│  ├─ models/
+│  │  ├─ nn_tabular.py      # sieć z embeddingami kategorii
+│  │  ├─ baseline_xgb.py    # baseline XGBoost dla porównania
+│  │  └─ metrics.py         # AUC, F1, logloss, MAE/MSE itp.
+│  └─ training/
+│     ├─ train_nn.py        # trening sieci
+│     ├─ train_xgb.py       # trening baseline
+│     └─ evaluate.py        # ewaluacja i raport
+├─ models/
+│  ├─ checkpoints/          # wagi NN
+│  └─ artifacts/            # zapisane encodery, skalery, itp.
+└─ reports/
+   ├─ figures/              # wykresy z EDA/learning curves
+   └─ metrics.json          # wyniki eksperymentów

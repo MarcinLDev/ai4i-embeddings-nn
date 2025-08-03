@@ -1,0 +1,10 @@
+python-dotenv
+pandas
+numpy
+scikit-learn
+pyyaml
+tqdm
+matplotlib
+xgboost
+torch>=2.2
+torchmetrics
