@@ -6,8 +6,6 @@
 - model główny → **sieć neuronowa** dla danych tabelarycznych,
 - baseline → **XGBoost** do porównania.
 
-## 1) Dane
-
 Używamy zbioru **AI4I 2020 – Predictive Maintenance** (UCI).  
 Plik `ai4i2020.csv` umieść w `data/raw/`.
 
